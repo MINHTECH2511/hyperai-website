@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HyperAI VIET NAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000 url('https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/ChatGPT%20Image%2021_31_33,%201%20thg%204,%202025.png') center/cover no-repeat fixed;
+      color: #111;
+    }
+    .lang-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switcher button {
+      margin-left: 6px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    header {
+      min-height: 100vh;
+      background: rgba(255, 255, 255, 0.85);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px 100px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    nav a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    section.active { display: block; }
+    .service-box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      background-color: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-top: 1px solid #ccc;
+      color: #333;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      nav { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switcher">
+    <button onclick="changeLang('vi')">VI</button>
+    <button onclick="changeLang('en')">EN</button>
+    <button onclick="changeLang('jp')">JP</button>
+  </div>
+
+  <header>
+    <h1 data-vi="Giải pháp AI cho doanh nghiệp nhỏ & cá nhân" data-en="AI Solutions for Small Business & Individuals" data-jp="中小企業・個人向けAIソリューション">Giải pháp AI cho doanh nghiệp nhỏ & cá nhân</h1>
+    <p data-vi="Chuyển đổi số, tự động hóa và chatbot thông minh cho Zalo, Facebook" data-en="Digital transformation, automation and smart chatbot for Zalo, Facebook" data-jp="Zalo・Facebookのためのデジタル化とスマートチャットボット">Chuyển đổi số, tự động hóa và chatbot thông minh cho Zalo, Facebook</p>
+    <nav>
+      <a onclick="showTab('home')" data-vi="Trang chủ" data-en="Home" data-jp="ホーム">Trang chủ</a>
+      <a onclick="showTab('about')" data-vi="Giới thiệu" data-en="About" data-jp="会社概要">Giới thiệu</a>
+      <a onclick="showTab('contact')" data-vi="Liên hệ" data-en="Contact" data-jp="お問い合わせ">Liên hệ</a>
+    </nav>
+  </header>
+
+  <section id="home" class="active">
+    <h2>Trang chủ</h2>
+    <div class="service-box">
+      <h3>Cố vấn chuyển đổi số tự động hoá</h3>
+      <p>Tối ưu hóa quy trình, giảm chi phí, tăng hiệu suất cho doanh nghiệp.</p>
+    </div>
+    <div class="service-box">
+      <h3>Giải pháp AI CHAT BOT Zalo, Facebook</h3>
+      <p>Tư vấn và triển khai chatbot chăm sóc khách hàng thông minh 24/7.</p>
+    </div>
+    <div class="service-box">
+      <h3>Hỗ trợ doanh nghiệp nhỏ, cửa hàng, cá nhân triển khai AI</h3>
+      <p>Giải pháp đơn giản, linh hoạt, dễ sử dụng và tiết kiệm chi phí.</p>
+    </div>
+    <p><strong>Hotline:</strong> 0856296151</p>
+  </section>
+
+  <section id="about">
+    <h2>Giới thiệu</h2>
+    <p>Công ty TNHH HyperAI VIET NAM</p>
+    <p>Tam ngữ: Việt - Anh - Nhật</p>
+    <p>Giấy phép đăng ký kinh doanh số: [Đang cập nhật]</p>
+    <p>Địa chỉ: lầu 2, 68 Nguyễn Huệ, P. Bến Nghé, Quận 1, TP. HCM</p>
+    <p>Sáng lập và giám đốc điều hành: Lữ Minh Trí</p>
+  </section>
+
+  <section id="contact">
+    <h2>Liên hệ</h2>
+    <p>📞 0856296151</p>
+    <p>📘 Facebook: [link]</p>
+    <p>📸 Instagram: [link]</p>
+    <p>🎵 TikTok: [link]</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 HyperAI VIET NAM</p>
+  </footer>
+
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+    }
+    function changeLang(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+</body>
+</html>
