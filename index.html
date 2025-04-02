@@ -1,164 +1,255 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HyperAI VIET NAM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
+      display: flex;
       background: #000 url('https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/ChatGPT%20Image%2021_31_33,%201%20thg%204,%202025.png') center/cover no-repeat fixed;
-      color: #111;
+      color: #fff;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 230px;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid #333;
+    }
+    .sidebar h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #33ccff;
+    }
+    .sidebar nav a {
+      display: block;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .sidebar nav a:hover {
+      color: #33ccff;
     }
     .lang-switcher {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      margin-top: 40px;
     }
     .lang-switcher button {
-      margin-left: 6px;
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      margin: 3px;
+      background: #fff;
+      border: none;
       padding: 5px 10px;
+      border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
     }
-    header {
-      min-height: 100vh;
-      background: rgba(255, 255, 255, 0.85);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px 100px;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      max-width: 800px;
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-      max-width: 700px;
-    }
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    nav a {
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 1.1rem;
+    main {
+      margin-left: 230px;
+      padding: 40px 30px;
+      flex: 1;
     }
     section {
       display: none;
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: rgba(255,255,255,0.95);
+      margin-bottom: 60px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
-    section.active { display: block; }
+    section.active {
+      display: block;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
     .service-box {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+    section img {
+      width: 100%;
+      max-width: 500px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin: px 0;
     }
     footer {
       text-align: center;
-      background-color: rgba(255,255,255,0.95);
+      color: #aaa;
+      margin-top: 40px;
       padding: 20px;
-      border-top: 1px solid #ccc;
-      color: #333;
+      border-top: 1px solid #333;
     }
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
-      nav { flex-direction: column; gap: 10px; }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      main {
+        margin-left: 0;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="lang-switcher">
-    <button onclick="changeLang('vi')">VI</button>
-    <button onclick="changeLang('en')">EN</button>
-    <button onclick="changeLang('jp')">JP</button>
-  </div>
-
-  <header>
-    <h1 data-vi="Giải pháp AI cho doanh nghiệp nhỏ & cá nhân" data-en="AI Solutions for Small Business & Individuals" data-jp="中小企業・個人向けAIソリューション">Giải pháp AI cho doanh nghiệp nhỏ & cá nhân</h1>
-    <p data-vi="Chuyển đổi số, tự động hóa và chatbot thông minh cho Zalo, Facebook" data-en="Digital transformation, automation and smart chatbot for Zalo, Facebook" data-jp="Zalo・Facebookのためのデジタル化とスマートチャットボット">Chuyển đổi số, tự động hóa và chatbot thông minh cho Zalo, Facebook</p>
+  <div class="sidebar">
+    <h2 data-vi="HyperAI" data-en="HyperAI" data-jp="HyperAI">HyperAI</h2>
     <nav>
       <a onclick="showTab('home')" data-vi="Trang chủ" data-en="Home" data-jp="ホーム">Trang chủ</a>
-      <a onclick="showTab('about')" data-vi="Giới thiệu" data-en="About" data-jp="会社概要">Giới thiệu</a>
+      <a onclick="showTab('services')" data-vi="Dịch vụ" data-en="Services" data-jp="サービス">Dịch vụ</a>
+      <a onclick="showTab('aiworker')" data-vi="AI Worker" data-en="AI Worker" data-jp="AIワーカー">AI Worker</a>
+      <a onclick="showTab('works')" data-vi="Dự án" data-en="Projects" data-jp="導入事例">Dự án</a>
+      <a onclick="showTab('about')" data-vi="Giới thiệu" data-en="About" data-jp="会社情報">Giới thiệu</a>
       <a onclick="showTab('contact')" data-vi="Liên hệ" data-en="Contact" data-jp="お問い合わせ">Liên hệ</a>
     </nav>
-  </header>
-
-  <section id="home" class="active">
-    <h2>Trang chủ</h2>
-    <div class="service-box">
-      <h3>Cố vấn chuyển đổi số tự động hoá</h3>
-      <p>Tối ưu hóa quy trình, giảm chi phí, tăng hiệu suất cho doanh nghiệp.</p>
+    <div class="lang-switcher">
+      <button onclick="changeLang('vi')">VI</button>
+      <button onclick="changeLang('en')">EN</button>
+      <button onclick="changeLang('jp')">JP</button>
     </div>
-    <div class="service-box">
-      <h3>Giải pháp AI CHAT BOT Zalo, Facebook</h3>
-      <p>Tư vấn và triển khai chatbot chăm sóc khách hàng thông minh 24/7.</p>
-    </div>
-    <div class="service-box">
-      <h3>Hỗ trợ doanh nghiệp nhỏ, cửa hàng, cá nhân triển khai AI</h3>
-      <p>Giải pháp đơn giản, linh hoạt, dễ sử dụng và tiết kiệm chi phí.</p>
-    </div>
-    <p><strong>Hotline:</strong> 0856296151</p>
-  </section>
+  </div>
 
-  <section id="about">
-    <h2>Giới thiệu</h2>
-    <p>Công ty TNHH HyperAI VIET NAM</p>
-    <p>Tam ngữ: Việt - Anh - Nhật</p>
-    <p>Giấy phép đăng ký kinh doanh số: [Đang cập nhật]</p>
-    <p>Địa chỉ: lầu 2, 68 Nguyễn Huệ, P. Bến Nghé, Quận 1, TP. HCM</p>
-    <p>Sáng lập và giám đốc điều hành: Lữ Minh Trí</p>
-  </section>
+  <main>
 
-  <section id="contact">
-    <h2>Liên hệ</h2>
-    <p>📞 0856296151</p>
-    <p>📘 Facebook: [link]</p>
-    <p>📸 Instagram: [link]</p>
-    <p>🎵 TikTok: [link]</p>
-  </section>
+    <!-- Trang chủ -->
+    <section id="home" class="active">
+      <h2 data-vi="Trang chủ" data-en="Home" data-jp="ホーム">Trang chủ</h2>
+      <img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/logo.png" alt="HyperAI Home">
+      <div class="service-box">
+        <h3 data-vi="Giới thiệu" data-en="Introduction" data-jp="概要">Giới thiệu</h3>
+        <p data-vi="HyperAI cung cấp giải pháp AI cho doanh nghiệp nhỏ và cá nhân." data-en="HyperAI provides AI solutions for SMEs and individuals." data-jp="HyperAIは中小企業・個人向けのAIソリューションを提供します。">
+          HyperAI cung cấp giải pháp AI cho doanh nghiệp nhỏ và cá nhân.
+        </p>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 HyperAI VIET NAM</p>
-  </footer>
+    <!-- Dịch vụ -->
+    <section id="services">
+      <h2 data-vi="Dịch vụ" data-en="Services" data-jp="サービス">Dịch vụ</h2>
+      <img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/dichvu.png" alt="Service image">
+      <div class="service-box">
+        <h3 data-vi="Triển khai Chatbot" data-en="Deploy Chatbot" data-jp="チャットボット導入">Triển khai Chatbot</h3>
+        <p data-vi="Chatbot chăm sóc khách hàng trên Zalo & Facebook." data-en="Customer support chatbot on Zalo & Facebook." data-jp="Zalo・Facebookで使用可能な顧客対応チャットボット。">
+          Chatbot chăm sóc khách hàng trên Zalo & Facebook.
+        </p>
+      </div>
+      <div class="service-box">
+        <h3 data-vi="Tự động hóa công việc" data-en="Workflow Automation" data-jp="業務自動化">Tự động hóa công việc</h3>
+        <p data-vi="Tích hợp RPA & AI xử lý công việc lặp lại." data-en="Apply RPA + AI to automate repeated tasks." data-jp="RPAとAIで繰り返しタスクを自動化します。">
+          Tích hợp RPA & AI xử lý công việc lặp lại.
+        </p>
+      </div>
+    </section>
+
+    <!-- AI Worker -->
+    <section id="aiworker">
+      <h2 data-vi="AI Worker" data-en="AI Worker" data-jp="AIワーカー">AI Worker</h2>
+      <img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/bot.png" alt="AI Worker">
+      <div class="service-box">
+        <h3 data-vi="Hỗ trợ nội dung" data-en="Content Support" data-jp="コンテンツ支援">Hỗ trợ nội dung</h3>
+        <p data-vi="Tạo nội dung bài viết, bài post, báo cáo thông minh bằng AI." data-en="Create posts and reports using AI." data-jp="AIによる記事やレポートの作成。">
+          Tạo nội dung bài viết, bài post, báo cáo thông minh bằng AI.
+        </p>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works">
+      <h2 data-vi="Dự án đã triển khai" data-en="Deployed Projects" data-jp="導入済プロジェクト">Dự án đã triển khai</h2>
+      <img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/lam.png" alt="Projects">
+      <div class="service-box">
+        <h3 data-vi="Xử lý hóa đơn bằng RPA" data-en="Invoice Automation" data-jp="請求書自動化">Xử lý hóa đơn bằng RPA</h3>
+        <p data-vi="Sử dụng RPA để tự động hóa xử lý hàng nghìn hóa đơn." data-en="Use RPA to automate thousands of invoice tasks." data-jp="RPAで数千件の請求業務を自動化。">
+          Sử dụng RPA để tự động hóa xử lý hàng nghìn hóa đơn.
+        </p>
+      </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="about">
+      <h2 data-vi="Giới thiệu" data-en="About" data-jp="会社情報">Giới thiệu</h2>
+      <img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/logo.png" alt="About">
+      <div class="service-box">
+        <h3><span data-vi="CÔNG TY THHH HYPER AI Việt Nam" data-en="HYPER AI VIETNAM COMPANY LIMITED" data-jp="ハイパーAIベトナム株式会社">cty </span></h3>
+        <p data-vi="Giấy phép đăng ký kinh doanh số : ( đang cập nhật)" data-en="Business registration certificate number: (updating)" data-jp="事業者登録許可番号：（更新中）">
+          Người sáng lập & lãnh đạo công ty.
+        </p>
+        
+        <p data-vi="Địa chỉ: Lầu 2, 68 Nguyễn Huệ, Quận 1, TPHCM" data-en="Address: 2nd Floor, 68 Nguyen Hue, District 1, HCMC" data-jp="住所: ホーチミン市1区グエンフエ68番地2F ">
+          ĐỊA CHỈ
+        </p>
+        
+        
+        <p data-vi="📞 0856296151" data-en="📞 +84 856 296 151" data-jp="📞 0856296151">
+          📞 0856296151
+        </p>
+
+
+      </div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="contact">
+      <h2 data-vi="Liên hệ" data-en="Contact" data-jp="お問い合わせ">Liên hệ</h2>
+      <div class="service-box">
+        <p data-vi="📞 0856296151" data-en="📞 +84 856 296 151" data-jp="📞 0856296151">
+          📞 0856296151
+        </p>
+
+        <p data-vi="📧 Email: contact@hyperai.vn" data-en="📧 Email: contact@hyperai.vn" data-jp="📧 メール: contact@hyperai.vn">
+          📧 Email: contact@hyperai.vn
+        </p>
+
+        <p data-vi="🌐 www.hyperai.vn" data-en="🌐 www.hyperai.vn" data-jp="🌐 www.hyperai.vn">
+          🌐 www.hyperai.vn
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p data-vi="© 2025 HyperAI VIET NAM" data-en="© 2025 HyperAI VIET NAM Co., Ltd" data-jp="© 2025 HyperAIベトナム合同会社">© 2025 HyperAI VIET NAM</p>
+    </footer>
+
+  </main>
 
   <script>
     function showTab(tab) {
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      document.getElementById(tab).classList.add('active');
+      const selected = document.getElementById(tab);
+      selected.classList.add('active');
+      setTimeout(() => {
+        selected.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
+
     function changeLang(lang) {
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
+      document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
       });
     }
+
+    // Áp dụng nội dung mặc định
+    window.addEventListener('DOMContentLoaded', function () {
+      changeLang('vi');
+    });
   </script>
 </body>
 </html>
