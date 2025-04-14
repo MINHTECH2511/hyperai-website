@@ -4,175 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HYPER ONE – The AI Trade Engine of Asia</title>
+    <meta name="description" content="Hyper One – The AI Trade Engine of Asia. A Vietnamese tech company powering SME exports with AI automation.">
+    <meta name="keywords" content="AI trade, export assistant, digital customs, chatbot, Central Asia, Southeast Asia, Vietnam, Hyper One">
+    <meta property="og:title" content="HYPER ONE – The AI Trade Engine of Asia">
+    <meta property="og:description" content="Empowering SMEs in Asia to export smarter with AI.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/hyperone.logo.jpg">
+    <meta name="robots" content="index, follow">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&family=Oswald:wght@600&family=Fugaz+One&display=swap" rel="stylesheet" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-        scroll-behavior: smooth;
-        font-family: 'Space Grotesk', sans-serif;
-        background-color: #0f1117;
-        color: #f3f4f6;
-      }
-
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        background-color: #0f1117;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-bottom: 1px solid #1f2937;
-      }
-
-      header h1 {
-        color: #38bdf8;
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      nav a {
-        color: #94a3b8;
-        margin-left: 24px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-
-      nav a:hover {
-        color: #38bdf8;
-      }
-
-      #language-toggle {
-        margin-left: 24px;
-      }
-
-      .section {
-        padding: 100px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 1s ease-out;
-      }
-
-      .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .about-section {
-        background: url('https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/b.png') center/cover no-repeat;
-        background-size: cover;
-        color: #fff;
-      }
-
-      .vision-section {
-        background-color: #1e293b;
-      }
-
-      .ceo-section {
-        background-color: #0f172a;
-      }
-
-      .services-section {
-        background-color: #1a1a1a;
-      }
-
-      .projects-section {
-        background: linear-gradient(to right, #1e293b, #0f1117);
-      }
-
-      .contact-section {
-        background-color: #0c0c0c;
-      }
-
-      .section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-      }
-
-      h2.section-title-about {
-  font-family: 'Fugaz One', sans-serif;
-  color: #38bdf8;
-  letter-spacing: 0.5px;
-}
-
-      h2.section-title-vision {
-  font-family: 'Oswald', sans-serif;
-  color: #818cf8;
-  text-transform: uppercase;
-}
-
-      h2.section-title-ceo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  color: #0ea5e9;
-  font-size: 2.3rem;
-}
-
-      p[data-lang] {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-      }
-
-      footer {
-        text-align: center;
-        padding: 40px 20px;
-        font-size: 0.9rem;
-        color: #94a3b8;
-        border-top: 1px solid #1e293b;
-        background-color: #0f1117;
-      }
-    .fixed-contact-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #0f172a;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  z-index: 10000;
-  border-top: 1px solid #334155;
-}
-
-.fixed-contact-bar a {
-  color: #f3f4f6;
-  text-decoration: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.95rem;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
-
-.fixed-contact-bar a:hover {
-  background-color: #1e293b;
-}
-
-.fixed-contact-bar .icon {
-  font-size: 1.1rem;
-}
-</style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { scroll-behavior: smooth; font-family: 'Space Grotesk', sans-serif; background-color: #0f1117; color: #f3f4f6; }
+      header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #0f1117; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #1f2937; }
+      header h1 { color: #38bdf8; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; }
+      nav a { color: #94a3b8; margin-left: 24px; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+      nav a:hover { color: #38bdf8; }
+      #language-toggle { margin-left: 24px; }
+      .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
+      .section.visible { opacity: 1; transform: translateY(0); }
+      .about-section { background: url('https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/b.png') center/cover no-repeat; background-size: cover; color: #fff; }
+      .vision-section { background-color: #1e293b; }
+      .ceo-section { background-color: #0f172a; }
+      .services-section { background-color: #1a1a1a; }
+      .projects-section { background: linear-gradient(to right, #1e293b, #0f1117); }
+      .contact-section { background-color: #0c0c0c; }
+      .section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+      h2.section-title-about { font-family: 'Fugaz One', sans-serif; color: #38bdf8; letter-spacing: 0.5px; }
+      h2.section-title-vision { font-family: 'Oswald', sans-serif; color: #818cf8; text-transform: uppercase; }
+      h2.section-title-ceo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #0ea5e9; font-size: 2.3rem; }
+      p[data-lang] { font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; padding: 20px; }
+      footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #94a3b8; border-top: 1px solid #1e293b; background-color: #0f1117; }
+      .fixed-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #0f172a; display: flex; justify-content: space-around; align-items: center; padding: 10px 0; z-index: 10000; border-top: 1px solid #334155; }
+      .fixed-contact-bar a { color: #f3f4f6; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px; font-size: 0.95rem; padding: 6px 12px; border-radius: 6px; transition: background 0.2s; }
+      .fixed-contact-bar a:hover { background-color: #1e293b; }
+      .fixed-contact-bar .icon { font-size: 1.1rem; }
+    </style>
   </head>
   <body>
     <header>
-      <h1>HYPER ONE</h1>
+      <h1><img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/hyperone.logo.jpg" alt="Hyper One Logo" style="height: 36px; vertical-align: middle; margin-right: 12px;">HYPER ONE</h1>
       <nav>
         <a href="#about">About</a>
         <a href="#vision">Vision</a>
@@ -189,75 +58,69 @@
 
     <section id="about" class="section about-section">
       <h2 class="section-title-about" data-lang="en">About</h2>
-<h2 class="section-title-about" data-lang="vi" style="display:none">Giới thiệu</h2>
+      <h2 class="section-title-about" data-lang="vi" style="display:none">Giới thiệu</h2>
       <p data-lang="en">Hyper One is a Vietnamese technology company pioneering AI-powered trade enablement across emerging markets. We operate across Vietnam, Central Asia, and East Asia, helping SMEs scale globally with automation and connectivity.</p>
       <p data-lang="vi" style="display:none">Hyper One là một công ty công nghệ tại Việt Nam, tiên phong trong việc kết nối thương mại bằng AI tại các thị trường mới nổi. Chúng tôi hoạt động ở Việt Nam, Trung Á và Đông Á, giúp doanh nghiệp nhỏ mở rộng toàn cầu bằng công nghệ và tự động hóa.</p>
     </section>
 
     <section id="vision" class="section vision-section">
       <h2 class="section-title-vision" data-lang="en">Mission & Vision</h2>
-<h2 class="section-title-vision" data-lang="vi" style="display:none">Sứ mệnh & Tầm nhìn</h2>
+      <h2 class="section-title-vision" data-lang="vi" style="display:none">Sứ mệnh & Tầm nhìn</h2>
       <p data-lang="en"><strong>Mission:</strong> To democratize access to AI and export ecosystems for all forward-thinking businesses in Asia.<br><strong>Vision:</strong> To become the most trusted AI trade infrastructure bridging Southeast Asia and Central Asia.</p>
       <p data-lang="vi" style="display:none"><strong>Sứ mệnh:</strong> Dân chủ hóa khả năng tiếp cận AI và hệ sinh thái xuất khẩu cho mọi doanh nghiệp tiên phong tại châu Á.<br><strong>Tầm nhìn:</strong> Trở thành nền tảng thương mại AI đáng tin cậy nhất, kết nối Đông Nam Á và Trung Á.</p>
     </section>
 
     <section id="ceo" class="section ceo-section">
       <h2 class="section-title-ceo" data-lang="en">Message from our CEO</h2>
-<h2 class="section-title-ceo" data-lang="vi" style="display:none">Thông điệp từ CEO</h2>
+      <h2 class="section-title-ceo" data-lang="vi" style="display:none">Thông điệp từ CEO</h2>
       <p data-lang="en"><em>"We believe that small businesses are the foundation of economic resilience. With the right tools and global connections, they can thrive in a digital-first world. HYPER ONE is here to make that vision a reality."</em><br>– <strong>Lữ Minh Trí</strong>, Founder & CEO</p>
       <p data-lang="vi" style="display:none"><em>“Chúng tôi tin rằng doanh nghiệp nhỏ là nền tảng của khả năng phục hồi kinh tế. Với công cụ phù hợp và kết nối toàn cầu, họ có thể phát triển mạnh trong thế giới ưu tiên kỹ thuật số. HYPER ONE ra đời để hiện thực hóa tầm nhìn đó.”</em><br>– <strong>Lữ Minh Trí</strong>, Người sáng lập & CEO</p>
     </section>
 
     <section id="services" class="section services-section">
       <h2 data-lang="en">Our Services</h2>
-<h2 data-lang="vi" style="display:none">Dịch vụ của chúng tôi</h2>
+      <h2 data-lang="vi" style="display:none">Dịch vụ của chúng tôi</h2>
       <p data-lang="en">Chatbots, export assistant, smart documentation, digital customs support, workflow automation, container tracking, AI reports – all under one integrated platform.</p>
       <p data-lang="vi" style="display:none">Chatbot, trợ lý xuất khẩu, tài liệu thông minh, hỗ trợ hải quan điện tử, tự động hóa quy trình, theo dõi container, báo cáo AI – tất cả nằm trong một nền tảng tích hợp duy nhất.</p>
     </section>
 
     <section id="projects" class="section projects-section">
       <h2 data-lang="en">Impact & Case Studies</h2>
-<h2 data-lang="vi" style="display:none">Dự án thực tế</h2>
+      <h2 data-lang="vi" style="display:none">Dự án thực tế</h2>
       <p data-lang="en">From invoice automation in Uzbekistan to AI-generated marketing content in Vietnam, Hyper One's solutions are saving time and unlocking growth for businesses across Asia.</p>
       <p data-lang="vi" style="display:none">Từ việc tự động hóa hóa đơn tại Uzbekistan đến nội dung marketing AI tại Việt Nam, các giải pháp của Hyper One giúp doanh nghiệp tiết kiệm thời gian và mở rộng quy mô hiệu quả trên toàn châu Á.</p>
     </section>
 
     <section id="contact" class="section contact-section">
-  <h2 data-lang="en">Contact</h2>
-  <h2 data-lang="vi" style="display:none">Liên hệ</h2>
-  <p data-lang="en">
-    Address: 68 Nguyen Hue St, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam<br>
-    Phone: +84 352 60 80 68 / +84 342 60 80 68<br>
-    Email: contact@hyperone.vn<br>
-    Channels: WhatsApp | Viber | Zalo
-  </p>
-  <p data-lang="vi" style="display:none">
-    Địa chỉ: 68 Nguyễn Huệ, P. Bến Nghé, Quận 1, TP. Hồ Chí Minh, Việt Nam<br>
-    Điện thoại: +84 352 60 80 68 / +84 342 60 80 68<br>
-    Email: contact@hyperone.vn<br>
-    Kênh: WhatsApp | Viber | Zalo
-  </p>
-  <div style="margin-top: 20px;">
-    <a href="https://www.facebook.com/share/1P5vDD1VgB/?mibextid=wwXIfr" target="_blank" style="background:#3b5998; color:white; padding:10px 20px; text-decoration:none; border-radius:6px; margin-right:10px;">Facebook</a>
-    <a href="https://m.me/HYPERONECO.LTD" target="_blank" style="background:#00b2ff; color:white; padding:10px 20px; text-decoration:none; border-radius:6px;">Message Us</a>
-  </div>
-</section>
+      <h2 data-lang="en">Contact</h2>
+      <h2 data-lang="vi" style="display:none">Liên hệ</h2>
+      <p data-lang="en">
+        Address: 68 Nguyen Hue St, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam<br>
+        Phone: +84 352 60 80 68 / +84 342 60 80 68<br>
+        Email: contact@hyperone.vn<br>
+        Channels: WhatsApp | Viber | Zalo
+      </p>
+      <p data-lang="vi" style="display:none">
+        Địa chỉ: 68 Nguyễn Huệ, P. Bến Nghé, Quận 1, TP. Hồ Chí Minh, Việt Nam<br>
+        Điện thoại: +84 352 60 80 68 / +84 342 60 80 68<br>
+        Email: contact@hyperone.vn<br>
+        Kênh: WhatsApp | Viber | Zalo
+      </p>
+      <div style="margin-top: 20px;">
+        <a href="https://www.facebook.com/share/1P5vDD1VgB/?mibextid=wwXIfr" target="_blank" style="background:#3b5998; color:white; padding:10px 20px; text-decoration:none; border-radius:6px; margin-right:10px;">Facebook</a>
+        <a href="https://m.me/HYPERONECO.LTD" target="_blank" style="background:#00b2ff; color:white; padding:10px 20px; text-decoration:none; border-radius:6px;">Message Us</a>
+      </div>
+    </section>
 
     <footer>
       © 2025 HYPER ONE Co., Ltd – Built to move Asia forward.
     </footer>
 
     <div class="fixed-contact-bar">
-  <a href="mailto:contact@hyperone.vn">
-    <span class="icon">✉️</span> <span data-lang="en">Email</span><span data-lang="vi" style="display:none">Email</span>
-  </a>
-  <a href="tel:+84352608068">
-    <span class="icon">📞</span> <span data-lang="en">Call</span><span data-lang="vi" style="display:none">Điện thoại</span>
-  </a>
-  <a href="https://m.me/HYPERONECO.LTD" target="_blank">
-    <span class="icon">💬</span> <span data-lang="en">Chat</span><span data-lang="vi" style="display:none">Chat</span>
-  </a>
-</div>
+      <a href="mailto:contact@hyperone.vn"><span class="icon">✉️</span> <span data-lang="en">Email</span><span data-lang="vi" style="display:none">Email</span></a>
+      <a href="tel:+84352608068"><span class="icon">📞</span> <span data-lang="en">Call</span><span data-lang="vi" style="display:none">Điện thoại</span></a>
+      <a href="https://m.me/HYPERONECO.LTD" target="_blank"><span class="icon">💬</span> <span data-lang="en">Chat</span><span data-lang="vi" style="display:none">Chat</span></a>
+    </div>
 
     <script>
       function switchLang(lang) {
@@ -265,7 +128,6 @@
           el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
         });
       }
-
       (function () {
         const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver(entries => {
