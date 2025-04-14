@@ -1,312 +1,198 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HyperAI VIET NAM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #000 url('https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/ChatGPT%20Image%2021_31_33,%201%20thg%204,%202025.png') center/cover no-repeat fixed;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: row;
-    }
-
-    .sidebar {
-      width: 230px;
-      background: rgba(0, 0, 0, 0.85);
-      padding: 20px;
-      height: 100vh;
-      position: fixed;
-      overflow-y: auto;
-      border-right: 1px solid #333;
-      z-index: 999;
-    }
-
-    .sidebar h2 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      color: #33ccff;
-    }
-
-    .sidebar nav a {
-      display: block;
-      margin-bottom: 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .sidebar nav a:hover {
-      color: #33ccff;
-    }
-
-    .lang-switcher {
-      margin-top: 40px;
-    }
-
-    .lang-switcher button {
-      margin: 3px;
-      background: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .menu-toggle {
-      display: none;
-    }
-
-    main {
-      margin-left: 230px;
-      padding: 40px 30px;
-      flex: 1;
-    }
-
-    section {
-      display: none;
-      margin-bottom: 60px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    section.active {
-      display: block;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-
-    .service-box {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 8px;
-    }
-
-    section img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaa;
-      margin-top: 40px;
-      padding: 20px;
-      border-top: 1px solid #333;
-    }
-
-    /* Responsive Mobile Styles */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HYPER ONE – The AI Trade Engine of Asia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .menu-toggle {
-        display: block;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 10px 15px;
-        border-radius: 5px;
-        font-size: 20px;
-        z-index: 1000;
-        cursor: pointer;
+      html, body {
+        scroll-behavior: smooth;
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: #0f1117;
+        color: #f3f4f6;
       }
 
-      .sidebar {
-        position: fixed;
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: #0f1117;
+        position: sticky;
         top: 0;
-        left: -100%;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        border-bottom: 1px solid #1f2937;
       }
 
-      .sidebar.open {
-        left: 0;
+      header h1 {
+        color: #38bdf8;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
       }
 
-      main {
-        margin-left: 0;
-        padding: 80px 15px 20px;
+      nav a {
+        color: #94a3b8;
+        margin-left: 24px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #38bdf8;
+      }
+
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 140px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        background: linear-gradient(90deg, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: #cbd5e1;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .cta-button {
+        margin-top: 40px;
+        background-color: #38bdf8;
+        color: #0f172a;
+        padding: 14px 32px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+      }
+
+      .cta-button:hover {
+        background-color: #0ea5e9;
       }
 
       section img {
-        width: 100%;
-        height: auto;
+        margin-top: 40px;
+        border-radius: 12px;
+        max-width: 100%;
       }
 
-      .service-box {
-        font-size: 16px;
+      h2 {
+        font-size: 2rem;
+        color: #e2e8f0;
+        margin-bottom: 20px;
       }
 
-      .sidebar nav a {
-        font-size: 18px;
-        padding: 10px;
+      p {
+        font-size: 1.1rem;
+        color: #cbd5e1;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <!-- Nút Menu dành cho điện thoại -->
-  <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 0.9rem;
+        color: #64748b;
+        border-top: 1px solid #1e293b;
+        margin-top: 60px;
+      }
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <h2 data-vi="HyperAI" data-en="HyperAI" data-jp="HyperAI">HyperAI</h2>
-    <nav>
-      <a onclick="showTab('home')" data-vi="Trang chủ" data-en="Home" data-jp="ホーム">Trang chủ</a>
-      <a onclick="showTab('services')" data-vi="Dịch vụ" data-en="Services" data-jp="サービス">Dịch vụ</a>
-      <a onclick="showTab('aiworker')" data-vi="AI Worker" data-en="AI Worker" data-jp="AIワーカー">AI Worker</a>
-      <a onclick="showTab('works')" data-vi="Dự án" data-en="Projects" data-jp="導入事例">Dự án</a>
-      <a onclick="showTab('about')" data-vi="Giới thiệu" data-en="About" data-jp="会社情報">Giới thiệu</a>
-      <a onclick="showTab('contact')" data-vi="Liên hệ" data-en="Contact" data-jp="お問い合わせ">Liên hệ</a>
-    </nav>
-    <div class="lang-switcher">
-      <button onclick="changeLang('vi')">VI</button>
-      <button onclick="changeLang('en')">EN</button>
-      <button onclick="changeLang('jp')">JP</button>
-    </div>
-  </div>
+      .quote {
+        font-style: italic;
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #1e293b;
+        border-left: 4px solid #38bdf8;
+        max-width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HYPER ONE</h1>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#vision">Vision</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Trang chủ -->
-    <section id="home" class="active">
-      <h2 data-vi="Trang chủ" data-en="Home" data-jp="ホーム">Trang chủ</h2>
-      <img src="https://raw.githubusercontent.com/MINHTECH2511/hyperai-website/main/dichvu.png" alt="HyperAI Home">
-      <div class="service-box">
-        <h3 data-vi="Giới thiệu" data-en="Introduction" data-jp="概要">Giới thiệu</h3>
-        <p data-vi="HyperAI cung cấp giải pháp AI cho doanh nghiệp nhỏ và cá nhân." data-en="HyperAI provides AI solutions for SMEs and individuals." data-jp="HyperAIは中小企業・個人向けのAIソリューションを提供します。">
-          HyperAI cung cấp giải pháp AI cho doanh nghiệp nhỏ và cá nhân.
-        </p>
-      </div>
+    <section id="hero" class="hero">
+      <h1>The AI Trade Engine of Asia</h1>
+      <p>
+        HYPER ONE empowers small businesses to trade smarter across Vietnam, Central Asia, East Asia and the Middle East — powered by automation, data and intelligent systems.
+      </p>
+      <a href="#services" class="cta-button">Explore Our Platform</a>
     </section>
 
-    <!-- Dịch vụ -->
-    <section id="services">
-      <h2 data-vi="Dịch vụ" data-en="Services" data-jp="サービス">Dịch vụ</h2>
-      <div class="service-box">
-        <h3 data-vi="Triển khai Chatbot" data-en="Deploy Chatbot" data-jp="チャットボット導入">Triển khai Chatbot</h3>
-        <p data-vi="Chatbot chăm sóc khách hàng trên Zalo & Facebook." data-en="Customer support chatbot on Zalo & Facebook." data-jp="Zalo・Facebookで使用可能な顧客対応チャットボット。">
-          Chatbot chăm sóc khách hàng trên Zalo & Facebook.
-        </p>
-      </div>
-      <div class="service-box">
-        <h3 data-vi="Tự động hóa công việc" data-en="Workflow Automation" data-jp="業務自動化">Tự động hóa công việc</h3>
-        <p data-vi="Tích hợp RPA & AI xử lý công việc lặp lại." data-en="Apply RPA + AI to automate repeated tasks." data-jp="RPAとAIで繰り返しタスクを自動化します。">
-          Tích hợp RPA & AI xử lý công việc lặp lại.
-        </p>
-      </div>
-    </section>
-
-    <!-- AI Worker -->
-    <section id="aiworker">
-      <h2 data-vi="AI Worker" data-en="AI Worker" data-jp="AIワーカー">AI Worker</h2>
-      <div class="service-box">
-        <h3 data-vi="Hỗ trợ nội dung" data-en="Content Support" data-jp="コンテンツ支援">Hỗ trợ nội dung</h3>
-        <p data-vi="Tạo nội dung bài viết, bài post, báo cáo thông minh bằng AI." data-en="Create posts and reports using AI." data-jp="AIによる記事やレポートの作成。">
-          Tạo nội dung bài viết, bài post, báo cáo thông minh bằng AI.
-        </p>
-      </div>
-    </section>
-
-    <!-- Dự án -->
-    <section id="works">
-      <h2 data-vi="Dự án đã triển khai" data-en="Deployed Projects" data-jp="導入済プロジェクト">Dự án</h2>
-      <div class="service-box">
-        <h3 data-vi="Xử lý hóa đơn bằng RPA" data-en="Invoice Automation" data-jp="請求書自動化">Xử lý hóa đơn bằng RPA</h3>
-        <p data-vi="Sử dụng RPA để tự động hóa xử lý hàng nghìn hóa đơn." data-en="Use RPA to automate thousands of invoice tasks." data-jp="RPAで数千件の請求業務を自動化。">
-          Sử dụng RPA để tự động hóa xử lý hàng nghìn hóa đơn.
-        </p>
-      </div>
-    </section>
-
-    <!-- Giới thiệu -->
     <section id="about">
-      <h2 data-vi="Giới thiệu" data-en="About" data-jp="会社情報">Giới thiệu</h2>
-      <div class="service-box">
-        <h3 data-vi="Công ty HyperAI" data-en="HyperAI Company" data-jp="HyperAI会社">Công ty HyperAI</h3>
-        <p data-vi="Giấy phép đăng ký kinh doanh đang cập nhật." data-en="Business license updating." data-jp="企業登録番号は更新中。">
-          Giấy phép đăng ký kinh doanh đang cập nhật.
-        </p>
-        <p data-vi="Địa chỉ: Lầu 2, 68 Nguyễn Huệ, Quận 1, TPHCM" data-en="2F, 68 Nguyen Hue, District 1, HCMC" data-jp="ホーチミン市1区グエンフエ通68番地2階">
-          Địa chỉ: Lầu 2, 68 Nguyễn Huệ, Quận 1, TPHCM
-        </p>
+      <h2>Who We Are</h2>
+      <p>
+        We are a technology company based in Vietnam, pioneering AI-powered trade enablement across emerging markets. Our tools help SMEs access global supply chains and automate their operations efficiently.
+      </p>
+    </section>
+
+    <section id="vision">
+      <h2>Mission & Vision</h2>
+      <p><strong>Mission:</strong> To democratize access to AI and export ecosystems for all forward-thinking businesses in Asia.</p>
+      <p><strong>Vision:</strong> To become the most trusted AI trade infrastructure bridging Southeast Asia and Central Asia.</p>
+
+      <div class="quote">
+        "We believe that small businesses are the foundation of economic resilience. With the right tools and global connections, they can thrive in a digital-first world. HYPER ONE is here to make that vision a reality."
+        <br /><br />
+        — <strong>Lữ Minh Trí</strong>, Founder & CEO
       </div>
     </section>
 
-    <!-- Liên hệ -->
+    <section id="services">
+      <h2>Our Capabilities</h2>
+      <p>
+        Chatbots, workflow automation, export assistant, digital paperwork, container tracking, AI reporting and more — all under one platform.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Real Impact</h2>
+      <p>
+        From invoice automation in Uzbekistan to AI marketing content in Vietnam, our tech helps businesses save time and scale up operations with minimal cost.
+      </p>
+    </section>
+
     <section id="contact">
-      <h2 data-vi="Liên hệ" data-en="Contact" data-jp="お問い合わせ">Liên hệ</h2>
-      <div class="service-box">
-        <p data-vi="📞 0856296151" data-en="📞 +84 856 296 151" data-jp="📞 0856296151">
-          📞 0856296151
-        </p>
-        <p data-vi="📧 Email: contact@hyperai.vn" data-en="📧 Email: contact@hyperai.vn" data-jp="📧 メール: contact@hyperai.vn">
-          📧 Email: contact@hyperai.vn
-        </p>
-        <p data-vi="🌐 Website: www.hyperai.vn" data-en="🌐 Website: www.hyperai.vn" data-jp="🌐 www.hyperai.vn">
-          🌐 www.hyperai.vn
-        </p>
-      </div>
+      <h2>Contact</h2>
+      <p>Email: contact@hyperone.vn<br />Phone: +84 856 296 151</p>
     </section>
 
     <footer>
-      <p data-vi="© 2025 HyperAI VIET NAM" data-en="© 2025 HyperAI VIET NAM Co., Ltd" data-jp="© 2025 HyperAIベトナム合同会社">
-        © 2025 HyperAI VIET NAM
-      </p>
+      © 2025 HYPER ONE Co., Ltd – Built to move Asia forward.
     </footer>
-  </main>
-
-  <script>
-    function showTab(tab) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      const selected = document.getElementById(tab);
-      selected.classList.add('active');
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.remove('open');
-      setTimeout(() => {
-        selected.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
-
-    function changeLang(lang) {
-      document.querySelectorAll(`[data-${lang}]`).forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
-    }
-
-    // Áp dụng ngôn ngữ mặc định
-    window.addEventListener('DOMContentLoaded', function () {
-      changeLang('vi');
-    });
-
-    // Toggle menu khi dùng đt
-    function toggleMenu() {
-      document.querySelector('.sidebar').classList.toggle('open');
-    }
-  </script>
-</body>
+  </body>
 </html>
